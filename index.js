@@ -17,8 +17,9 @@ const app = express()
 app.use(cors())
 app.use(bodyParser.json());
 app.use(cookieParser())
+//"mongodb+srv://saifkhadraoui656:hHQfdglHi6zEMpFA@cluster0.nx7qlpi.mongodb.net/"
 
-mongoose.connect("mongodb+srv://saifkhadraoui656:hHQfdglHi6zEMpFA@cluster0.nx7qlpi.mongodb.net/", {
+mongoose.connect(process.env.MONGODB, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then((response) => {
